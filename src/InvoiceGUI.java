@@ -110,13 +110,15 @@ public class InvoiceGUI extends JFrame {
      * @param regex the regular expression defining allowed input
      */
     private void applyRegexFilter(JTextField field, String regex) {
-        ((AbstractDocument) field.getDocument()).setDocumentFilter(new DocumentFilter() {
+        ((AbstractDocument) field.getDocument())
+                .setDocumentFilter(new DocumentFilter() {
             @Override
             public void replace(FilterBypass fb, int offset, int length, String text, AttributeSet attrs)
                     throws BadLocationException {
 
                 String currentText = fb.getDocument().getText(0, fb.getDocument().getLength());
-                String nextText = currentText.substring(0, offset) + text + currentText.substring(offset + length);
+                String nextText = currentText.substring(0, offset)
+                        + text + currentText.substring(offset + length);
 
                 if (nextText.isEmpty() || nextText.matches(regex)) {
                     super.replace(fb, offset, length, text, attrs);

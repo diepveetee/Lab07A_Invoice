@@ -25,9 +25,7 @@ public class LineItem {
     /**
      * Computes the total cost for this line item.
      * The total is calculated as:
-     * <pre>
      * quantity × product.unitPrice
-     * </pre>
      *
      * @return the total price for this line item
      */
