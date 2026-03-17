@@ -13,12 +13,12 @@ import java.awt.*;
 
 /**
  * A Swing-based graphical user interface for creating and displaying an invoice.
- * <p>
+ *
  * Users can enter a product name, unit price, and quantity. Each submitted item
  * is added to an internal {@link Invoice} object and displayed in two listboxes:
  * one showing the history of added items, and the other showing a formatted
  * invoice summary with aligned columns.
- * <p>
+ *
  * Numeric input fields are restricted using a regular-expression-based
  * {@link DocumentFilter} to ensure valid integer and decimal entry.
  */
