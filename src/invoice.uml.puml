@@ -1,0 +1,26 @@
+@startuml
+
+class Invoice {
+  - List<LineItem> lineItems
+  + addLineItem(item: LineItem)
+  + getTotalAmount(): double
+  + getLineItems(): List<LineItem>
+}
+
+class LineItem {
+  - quantity: int
+  - product: Product
+  + getTotal(): double
+}
+
+class Product {
+  - name: String
+  - unitPrice: double
+  + getName(): String
+  + getUnitPrice(): double
+}
+
+Invoice "1" --> "*" LineItem
+LineItem "1" --> "1" Product
+
+@enduml
